@@ -1,0 +1,42 @@
+{
+  "kind": "collectionType",
+  "collectionName": "workouts",
+  "info": {
+    "name": "Workout",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "duration": {
+      "type": "integer"
+    },
+    "image": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false
+    },
+    "video_url": {
+      "type": "string"
+    },
+    "categories": {
+      "via": "workouts",
+      "collection": "categories"
+    }
+  }
+}
