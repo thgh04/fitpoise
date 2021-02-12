@@ -26,7 +26,7 @@ module.exports = function (api) {
 
     const collection = actions.addCollection({
       typeName: 'Workout',
-      path: '/events/:id'
+      path: '/workouts/:id'
     })
 
     for (const workouts of data) {
@@ -38,7 +38,30 @@ module.exports = function (api) {
         duration: workouts.duration,
         thumbnail: workouts.image.formats.thumbnail.url,
         image: workouts.image.formats.medium.url,
-        category: workouts.categories[0].id
+        category: workouts.categories[0].id,
+        videourl: workouts.video_url
+      })
+    }
+  })
+
+  api.loadSource(async actions => {
+    const { data } = await axios.get('http://localhost:1337/nutritions/')
+
+    const collection = actions.addCollection({
+      typeName: 'Nutrition',
+      path: '/nutritions/:id'
+    })
+
+    for (const nutritions of data) {
+      collection.addNode({
+        id: nutritions.id,
+        path: '/nutritions/' + nutritions.id,
+        title: nutritions.title,
+        description: nutritions.description,
+        duration: nutritions.duration,
+        thumbnail: nutritions.thumbnail.formats.medium.url,
+        videourl: nutritions.video_url,
+        type: nutritions.types[0].id
       })
     }
   })

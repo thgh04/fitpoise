@@ -1,9 +1,8 @@
 {
   "kind": "collectionType",
-  "collectionName": "categories",
+  "collectionName": "types",
   "info": {
-    "name": "Category",
-    "description": ""
+    "name": "type"
   },
   "options": {
     "increments": true,
@@ -14,10 +13,9 @@
     "name": {
       "type": "string"
     },
-    "workouts": {
-      "via": "categories",
-      "collection": "workout",
-      "dominant": true
+    "nutritions": {
+      "via": "types",
+      "collection": "nutrition"
     }
   }
 }

@@ -13,7 +13,7 @@
 export default {
   metaInfo: {
     title: 'Home',
-    pageDescription: 'Test 321'
+    pageDescription: 'Fitpoise - Home'
   }
 }
 </script>

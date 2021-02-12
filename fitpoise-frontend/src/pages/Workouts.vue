@@ -20,7 +20,7 @@ width="300"
               <v-img
                 class="white--text align-end"
                 height="200px"
-                src="http://localhost:1337/uploads/thumbnail_hero_4d17e427ec.png"
+                :src="`http://localhost:1337${edge.node.thumbnail}`"
               >
                 <v-card-title>{{ edge.node.title }}</v-card-title>
               </v-img>
@@ -29,12 +29,12 @@ width="300"
                 Duration: {{ edge.node.duration }} minutes
               </v-card-subtitle>
 
-              <v-card-actions>
-                <v-btn
-                  color="orange"
-                  text
-                  href="{edge.node.id}"
-                >
+            <v-card-actions>
+                 <v-btn
+                    @click="$router.push(`/workouts/${edge.node.id}`)"
+                    color="orange"
+                    text
+                  >
                   Explore
                 </v-btn>
               </v-card-actions>

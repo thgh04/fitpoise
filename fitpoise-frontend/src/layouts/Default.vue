@@ -1,25 +1,54 @@
 <template>
   <v-app>
-    <v-app-bar app absolute dark>
-                    <v-app-bar-nav-icon></v-app-bar-nav-icon>
-                    <v-toolbar-title>FitPoise</v-toolbar-title>
-                    <v-text-field
-                      placeholder="Search"
-                      class="ml-8"
-                      style="max-width: 350px;"
-                      prepend-inner-icon="mdi-magnify"
-                      outlined
-                      rounded
-                      dense
-                      hide-details
-                    />
-                    <v-spacer></v-spacer>
-                    <v-btn icon>
-                      <v-icon dark>mdi-account</v-icon>
-                    </v-btn>
+     <v-card>
+    <v-app-bar
+      app
+      absolute
+      dark
+    >
+      <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
+
+      <v-toolbar-title>Fitpoise</v-toolbar-title>
     </v-app-bar>
 
-       <v-parallax
+    <v-navigation-drawer
+      v-model="drawer"
+      app
+      dark
+    >
+      <v-list
+        nav
+        dense
+      >
+        <v-list-item-group
+          v-model="group"
+          active-class="white--text text--white"
+        >
+          <v-list-item @click="$router.push(`/`)">
+            <v-list-item-icon>
+              <v-icon>mdi-home</v-icon>
+            </v-list-item-icon>
+            <v-list-item-title>Home</v-list-item-title>
+          </v-list-item>
+
+          <v-list-item @click="$router.push(`/workouts/`)">
+            <v-list-item-icon>
+              <v-icon>mdi-football</v-icon>
+            </v-list-item-icon>
+            <v-list-item-title>Workouts</v-list-item-title>
+          </v-list-item>
+
+           <v-list-item @click="$router.push(`/nutrition/`)">
+            <v-list-item-icon>
+              <v-icon>mdi-food-apple</v-icon>
+            </v-list-item-icon>
+            <v-list-item-title>Nutrition</v-list-item-title>
+          </v-list-item>
+        </v-list-item-group>
+      </v-list>
+    </v-navigation-drawer>
+  </v-card>
+  <v-parallax
     dark
     src="https://cdn.vuetifyjs.com/images/backgrounds/vbanner.jpg"
   >
@@ -62,3 +91,19 @@ query {
   }
 }
 </static-query>
+
+
+<script>
+  export default {
+    data: () => ({
+      drawer: false,
+      group: null,
+    }),
+
+    watch: {
+      group () {
+        this.drawer = false
+      },
+    },
+  }
+</script>

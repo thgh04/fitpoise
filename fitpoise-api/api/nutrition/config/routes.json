@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/nutritions",
+      "handler": "nutrition.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/nutritions/count",
+      "handler": "nutrition.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/nutritions/:id",
+      "handler": "nutrition.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/nutritions",
+      "handler": "nutrition.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/nutritions/:id",
+      "handler": "nutrition.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/nutritions/:id",
+      "handler": "nutrition.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

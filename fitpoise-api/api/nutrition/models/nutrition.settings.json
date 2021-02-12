@@ -1,8 +1,8 @@
 {
   "kind": "collectionType",
-  "collectionName": "workouts",
+  "collectionName": "nutritions",
   "info": {
-    "name": "Workout",
+    "name": "nutrition",
     "description": ""
   },
   "options": {
@@ -17,7 +17,18 @@
     "duration": {
       "type": "integer"
     },
-    "image": {
+    "video_url": {
+      "type": "string"
+    },
+    "types": {
+      "collection": "type",
+      "via": "nutritions",
+      "dominant": true
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "thumbnail": {
       "model": "file",
       "via": "related",
       "allowedTypes": [
@@ -27,16 +38,6 @@
       ],
       "plugin": "upload",
       "required": false
-    },
-    "video_url": {
-      "type": "string"
-    },
-    "categories": {
-      "collection": "categories",
-      "via": "workouts"
-    },
-    "description": {
-      "type": "richtext"
     }
   }
 }

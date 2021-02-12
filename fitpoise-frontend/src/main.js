@@ -4,6 +4,10 @@
 import Vuetify from 'vuetify'
 import 'vuetify/dist/vuetify.min.css'
 import DefaultLayout from '~/layouts/Default.vue'
+import VueYoutube from 'vue-youtube'
+
+import VueSimpleMarkdown from 'vue-simple-markdown'
+import 'vue-simple-markdown/dist/vue-simple-markdown.css'
 
 export default function (Vue, { appOptions, head }) {
   head.link.push({
@@ -18,6 +22,8 @@ export default function (Vue, { appOptions, head }) {
 
   const opts = {}
   Vue.use(Vuetify)
+  Vue.use(VueYoutube)
+  Vue.use(VueSimpleMarkdown)
 
   appOptions.vuetify = new Vuetify(opts);
 
