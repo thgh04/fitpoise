@@ -50,7 +50,7 @@
   </v-card>
   <v-parallax
     dark
-    src="https://cdn.vuetifyjs.com/images/backgrounds/vbanner.jpg"
+    src="https://i.ibb.co/FKNx1TL/hero.jpg"
   >
     <v-row
       align="center"
